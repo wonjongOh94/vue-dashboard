@@ -1,15 +1,16 @@
 <template>
   <div id="app">
-    hello   
+    <tool-bar></tool-bar>
+    <router-view></router-view>   
   </div>
 </template>
 
 <script>
+import Toolbar from './components/Toolbar';
+
 export default {
-  methods: {
-    fetchData() {
-      console.log('hello');
-    }
+  components: {
+      "tool-bar": Toolbar,
   }
 }
 </script>

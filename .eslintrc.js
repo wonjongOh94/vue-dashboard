@@ -10,13 +10,14 @@ module.exports = {
     },
     "parserOptions": {
         "ecmaVersion": 2018,
-        "sourceType": "module"
+        "sourceType": "module",
+        "parser": "babel-eslint"
     },
     "plugins": [
         "vue"
     ],
     "rules": {
         "semi": ["error", "always"],
-        "quotes": ["error", "double"]
+        "quotes": ["error", "single"]
     }
 };
