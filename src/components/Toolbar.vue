@@ -1,13 +1,13 @@
 <template>
   <div id="toolbar">
-    toolbar
+    <b>toolbar</b>
   </div>
 </template>
 
 <script>
 export default {
 
-}
+};
 </script>
 
 <style>
