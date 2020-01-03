@@ -4,7 +4,6 @@ module.exports = {
         "es6": true
     },
     "extends": [
-        "airbnb-base",
         "plugin:vue/recommended"
     ],
     "globals": {
@@ -21,6 +20,22 @@ module.exports = {
     ],
     "rules": {
         "semi": ["error", "always"],
-        "quotes": ["error", "single"]
+        "quotes": ["error", "single"],
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "path": ["src"]
+            },
+            "import/extensions": [
+                ".js",
+                ".jsx",
+                ".mjs",
+                ".ts",
+                ".tsx",
+                ".vue"
+            ]
+        },
+        
     }
 };

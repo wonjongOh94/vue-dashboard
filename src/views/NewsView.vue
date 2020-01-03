@@ -5,7 +5,8 @@
 </template>
 
 <script>
-import { fetchNewsList } from '../api/index';
+import * as api from '../api/index.js';
+const { fetchNewsList } = api;
 
 export default {
   data() {
@@ -20,6 +21,7 @@ export default {
         vm.users = res.data;
       })
       .catch((e) => console.log(e));
+    // this.$store.dispatch('FETCH_NEWS');
   },
 };
 </script>

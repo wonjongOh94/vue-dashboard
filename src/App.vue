@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <tool-bar></tool-bar>
-    <router-view></router-view>   
+    <router-view></router-view>
   </div>
 </template>
 
@@ -10,9 +10,9 @@ import Toolbar from './components/Toolbar';
 
 export default {
   components: {
-      "tool-bar": Toolbar,
-  }
-}
+    'tool-bar': Toolbar,
+  },
+};
 </script>
 
 <style>
