@@ -37,7 +37,7 @@
       "prettier"
     ],
     "rules": {
-      "vue/html-no-self-closing": "off"
+      "vue/html-no-self-closing": "on"
     },
     "parserOptions": {
       "parser": "babel-eslint"

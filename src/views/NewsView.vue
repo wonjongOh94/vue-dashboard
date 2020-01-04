@@ -1,6 +1,11 @@
 <template>
   <div id="news">
-    <div v-for="user in fetchedNews" v-bind:key="user">{{ user.title }}</div>
+    <div v-for="item in fetchedNews" v-bind:key="item">
+      {{ item.title }}
+      <small>
+        by <router-link v-bind:to="`/user/${item.user}`">{{item.user}}</router-link>
+      </small>
+    </div>
   </div>
 </template>
 
