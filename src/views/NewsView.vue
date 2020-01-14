@@ -1,7 +1,7 @@
 <template>
   <div id="news">
     <div v-for="item in fetchedNews" v-bind:key="item">
-      {{ item.title }}
+      <a v-bind:href="item.url">{{ item.title }}</a>
       <small>
         by <router-link v-bind:to="`/user/${item.user}`">{{item.user}}</router-link>
       </small>
@@ -11,6 +11,7 @@
 
 <script>
 import { mapState, mapGetters } from 'vuex';
+import { bus } from '../utils/bus';
 
 export default {
   computed: {
@@ -31,8 +32,16 @@ export default {
     //     vm.users = res.data;
     //   })
     //   .catch((e) => console.log(e));
-
-    this.$store.dispatch('FETCH_NEWS');
+    bus.$emit('start:spinner');
+    setTimeout(() => {
+      this.$store.dispatch('FETCH_NEWS')
+        .then(() => {
+            console.log('fetched');
+            bus.$emit('end:spinner');
+            console.log('spinner ended');
+        })
+        .catch(() => {});
+    }, 2000);
   },
 };
 </script>

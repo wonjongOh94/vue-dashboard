@@ -3,6 +3,7 @@
     <p>name : {{userInfo.id}}</p>
     <p>karma : {{userInfo.karma}}</p>
     <p>created : {{userInfo.created}}</p>
+    <p><a href="/news">go back</a></p>
   </div>
 </template>
 
