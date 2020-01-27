@@ -1,5 +1,5 @@
 import * as api from '../api/index.js';
-const { fetchNewsList,fetchUserInfo } = api;
+const { fetchNewsList,fetchUserInfo, fetchList } = api;
 
 export default {
       // 1번 방법
@@ -28,6 +28,16 @@ export default {
       fetchUserInfo(name)
         .then(({data}) => {
           commit('SET_USER', data);
+        })
+        .catch(e => {
+          console.log(e);
+        });
+    },
+
+    FETCH_LIST({commit}, pageName) {
+      fetchList(pageName)
+        .then(({data}) => {
+          commit('SET_LIST', data);
         })
         .catch(e => {
           console.log(e);

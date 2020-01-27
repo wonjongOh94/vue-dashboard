@@ -14,6 +14,10 @@ export const fetchUserInfo = (username) => {
   return axios.get(`${config.baseUrl}user/${username}.json`);
 };
 
+export const fetchList = (pageName) => {
+  return axios.get(`${config.baseUrl}${pageName}/1.json`);
+};
+
 // export default로 하면 import문에서 비구조화 할당이 되지 않는다. 
 // export {
 //   fetchNewsList,
