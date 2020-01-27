@@ -14,33 +14,21 @@ export default {
     // }
 
     // 2번 방법
-    FETCH_NEWS({commit}) {
-      fetchNewsList()
-        .then(({data}) => {
-          commit('SET_NEWS', data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
+    async FETCH_NEWS({commit}) {
+      const response = await fetchNewsList();
+      commit('SET_NEWS', response.data);
+      return response;
     },
 
-    FETCH_USER({commit}, name) {
-      fetchUserInfo(name)
-        .then(({data}) => {
-          commit('SET_USER', data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
+    async FETCH_USER({commit}, name) {
+      const response = await fetchUserInfo(name);
+      commit('SET_USER', response.data);
+      return response;
     },
 
-    FETCH_LIST({commit}, pageName) {
-      fetchList(pageName)
-        .then(({data}) => {
-          commit('SET_LIST', data);
-        })
-        .catch(e => {
-          console.log(e);
-        });
+    async FETCH_LIST({commit}, pageName) {
+      const response = await fetchList(pageName);
+      commit('SET_LIST', response.data);
+      return response;
     }
 };

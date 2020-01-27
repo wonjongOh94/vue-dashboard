@@ -8,8 +8,6 @@ export default function createListView(name) {
     created() {
       bus.$emit('start:spinner');
       setTimeout(() => {
-        console.log(this);
-        console.log(this.$route);
         this.$store.dispatch('FETCH_LIST', this.$route.name)
           .then(() => {
               bus.$emit('end:spinner');
